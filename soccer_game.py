@@ -188,9 +188,15 @@ class Game:
         draw_text = WINNER_FONT.render(text, 1, WHITE)
         if text=="Tie":
             self.screen.blit(draw_text, (self.width / 2 - draw_text.get_width() / 2, self.height / 2 - draw_text.get_height() / 2))
-        else:
+        if text=="Halland":
             self.screen.blit(draw_text, (self.width/2 -200, 100))
-            Gold_Ball = pygame.image.load('./pics/golden.png')
+            Gold_Ball = pygame.image.load('./pics/hal_win.png')
+            self.gold = pygame.transform.rotate(pygame.transform.scale(
+                Gold_Ball, (PLAYER_WIDTH*4, PLAYER_HEIGHT*4)), 0)
+            self.screen.blit(self.gold,(self.width/2 -350, 200))
+        if text=="Rodrygo":
+            self.screen.blit(draw_text, (self.width/2 -200, 100))
+            Gold_Ball = pygame.image.load('./pics/vin_win.png')
             self.gold = pygame.transform.rotate(pygame.transform.scale(
                 Gold_Ball, (PLAYER_WIDTH*4, PLAYER_HEIGHT*4)), 0)
             self.screen.blit(self.gold,(self.width/2 -350, 200))
@@ -230,7 +236,7 @@ class Game:
                 if self.hal_goals>self.vini_goals:
                     winner_text="Halland"
                 if self.vini_goals>self.hal_goals:
-                    winner_text="Vinicios"
+                    winner_text="Rodrygo"
                 if self.hal_goals==self.vini_goals:
                     winner_text="Tie"
                 self.draw_winner(winner_text)
