@@ -14,5 +14,9 @@ All you have to do in order to play its just running cmd in the project director
   
   python soccer_game.py
   
-This is what it looks like:
+Here its how it looks like:
+
+
+
+https://user-images.githubusercontent.com/92723105/184165223-39ef3376-dd2c-4283-a7aa-7e06580775f0.mp4
 
