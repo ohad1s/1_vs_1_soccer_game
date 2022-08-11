@@ -25,7 +25,7 @@ class Game:
         self.width, self.height = pyautogui.size()
         self.screen = pygame.display.set_mode([self.width - 40, self.height - 100])
         pygame.display.set_caption("Ciii Game!")
-        self.icon = pygame.image.load('pics/ball_icon.png')
+        self.icon = pygame.image.load('pics&aud/ball_icon.png')
         pygame.display.set_icon(self.icon)
 
         self.BALL_SPEED_X = 5
@@ -37,22 +37,22 @@ class Game:
 
         self.BORDER = pygame.Rect(self.width // 2 - 30, 0, 1, self.height)
 
-        self.KICK_SOUND = pygame.mixer.Sound('./pics/kick.wav')
-        self.GOAL_SOUND = pygame.mixer.Sound('./pics/SUIII.wav')
+        self.KICK_SOUND = pygame.mixer.Sound('pics&aud/kick.wav')
+        self.GOAL_SOUND = pygame.mixer.Sound('pics&aud/SUIII.wav')
 
-        HAL_IMAGE = pygame.image.load('./pics/hal.png')
+        HAL_IMAGE = pygame.image.load('pics&aud/hal.png')
         self.hal = pygame.transform.rotate(pygame.transform.scale(
             HAL_IMAGE, (PLAYER_WIDTH, PLAYER_HEIGHT)), 0)
 
-        VINI_IMAGE = pygame.image.load(os.path.join('./pics/vini.png'))
+        VINI_IMAGE = pygame.image.load(os.path.join('pics&aud/vini.png'))
         self.vini = pygame.transform.rotate(pygame.transform.scale(
             VINI_IMAGE, (PLAYER_WIDTH, PLAYER_HEIGHT)), 0)
 
-        BALL_IMAGE = pygame.image.load(os.path.join('./pics/ball_icon.png'))
+        BALL_IMAGE = pygame.image.load(os.path.join('pics&aud/ball_icon.png'))
         self.ball = pygame.transform.rotate(pygame.transform.scale(
             BALL_IMAGE, (PLAYER_WIDTH / 4, PLAYER_HEIGHT / 4)), 0)
 
-        self.bg = pygame.image.load("pics/pitch2.jpg")
+        self.bg = pygame.image.load("pics&aud/pitch2.jpg")
         self.bg = pygame.transform.scale(self.bg, (self.width - 40, self.height - 100))
 
         self.hal_goals = 0
@@ -103,14 +103,14 @@ class Game:
         self.GOAL_SOUND.play()
         cii_text = self.GOALS_FONT.render("Ciiiiii!!!", 1, BLACK)
         self.screen.blit(cii_text, (self.width / 2 - 200, 100))
-        CR72 = pygame.image.load('./pics/cr72.png')
+        CR72 = pygame.image.load('pics&aud/cr72.png')
         self.ciir72 = pygame.transform.rotate(pygame.transform.scale(
             CR72, (PLAYER_WIDTH * 4, PLAYER_HEIGHT * 4)), 0)
         self.screen.blit(self.ciir72, (self.width / 2 - 350, 200))
         pygame.display.update()
         cii_text = self.GOALS_FONT.render("Ciiiiii!!!", 1, BLACK)
         self.screen.blit(cii_text, (self.width / 2 - 200, 100))
-        CR7 = pygame.image.load('./pics/cr7.png')
+        CR7 = pygame.image.load('pics&aud/cr7.png')
         self.ciir7 = pygame.transform.rotate(pygame.transform.scale(
             CR7, (PLAYER_WIDTH * 4, PLAYER_HEIGHT * 4)), 0)
         self.screen.blit(self.ciir7, (self.width / 2 - 350, 200))
@@ -246,13 +246,13 @@ class Game:
             self.screen.blit(draw_text, (self.width / 2 - draw_text.get_width() / 2, self.height / 2 - draw_text.get_height() / 2))
         if text=="Halland":
             self.screen.blit(draw_text, (self.width/2 -200, 100))
-            Gold_Ball = pygame.image.load('./pics/hal_win.png')
+            Gold_Ball = pygame.image.load('pics&aud/hal_win.png')
             self.gold = pygame.transform.rotate(pygame.transform.scale(
                 Gold_Ball, (PLAYER_WIDTH*4, PLAYER_HEIGHT*4)), 0)
             self.screen.blit(self.gold,(self.width/2 -200, 200))
         if text=="Rodrygo":
             self.screen.blit(draw_text, (self.width/2 -350, 100))
-            Gold_Ball = pygame.image.load('./pics/vin_win.png')
+            Gold_Ball = pygame.image.load('pics&aud/vin_win.png')
             self.gold = pygame.transform.rotate(pygame.transform.scale(
                 Gold_Ball, (PLAYER_WIDTH*4, PLAYER_HEIGHT*4)), 0)
             self.screen.blit(self.gold,(self.width/2 -200, 200))
